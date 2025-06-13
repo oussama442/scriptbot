@@ -59,6 +59,11 @@ def send_to_telegram(text):
 
 app = Flask(__name__)
 
+# ✅ هذا هو الراوت الرئيسي لتأكيد أن السكربت شغال
+@app.route("/")
+def home():
+    return "🚀 ScriptBot is running on Railway!"
+
 @app.route("/run-script")
 def run_script():
     script = generate_script()
